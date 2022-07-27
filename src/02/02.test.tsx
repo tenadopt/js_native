@@ -18,7 +18,26 @@ beforeEach(() => {
                 bueldedAt: 2020, repaired: false,
                 adress: { number: 101, street: { title: "Happy Street" }}
             }],
-        govermentBuildings: [],
+        govermentBuildings: [
+            {
+                type: "HOSPITAL", budget: 200000, staffCount: 200,
+                adress: {
+                    number: 100,
+                    street: {
+                        title: "Centarl Str"
+                    }
+                }
+            },
+            {
+                type: "FIRE STATION", budget: 500000, staffCount: 1000,
+                adress: {
+                    number: 100,
+                    street: {
+                        title: "South Str"
+                    }
+                }
+            }
+        ],
         citizenNumber: 1000000
     }
 })
@@ -56,6 +75,6 @@ test("test city should contains hospital and fire station", () => {
 
     expect(city.govermentBuildings[1].type).toBe("FIRE STATION");
     expect(city.govermentBuildings[1].budget).toBe(500000);
-    expect(city.govermentBuildings[0].staffCount).toBe(1000);
-    expect(city.govermentBuildings[0].adress.street.title).toBe("South Str");
+    expect(city.govermentBuildings[1].staffCount).toBe(1000);
+    expect(city.govermentBuildings[1].adress.street.title).toBe("South Str");
 })
