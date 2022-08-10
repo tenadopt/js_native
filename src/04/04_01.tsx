@@ -17,7 +17,7 @@ const courses = [
     {title: "REACT", price: 150}
 ]
 
-const cheapPredicate = () => {
+const cheapPredicate = (course: CourseType) => {
     return course.price < 160;
 }
 
